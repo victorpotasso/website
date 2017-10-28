@@ -44,7 +44,7 @@ var plugins      = require('gulp-load-plugins');
             .pipe(buffer())
             .pipe(plugins().sourcemaps.init({'loadMaps': true}))
             .pipe(plugins().sourcemaps.write('.'))
-            .pipe(gulp.dest('public/assets/js'))
+            .pipe(gulp.dest('docs/assets/js'))
             .pipe(browserSync.stream());
      }
      bundle();
@@ -60,7 +60,7 @@ gulp.task('sass', function() {
         .pipe(sass())
         .pipe(autoprefixer({browsers: '> 5%'}))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('public/assets/css'))
+        .pipe(gulp.dest('docs/assets/css'))
         .pipe(filter('**/**.css'))
         .pipe(browserSync.stream())
 });
@@ -70,7 +70,7 @@ gulp.task('sass', function() {
  */
 gulp.task('public', function() {
     gulp.src(['src/public/**/**'])
-        .pipe(gulp.dest('public'));
+        .pipe(gulp.dest('docs'));
 });
 
 /**
@@ -84,7 +84,7 @@ gulp.task('build', ['babel', 'sass']);
 gulp.task('serve', ['build'], function() {
     browserSync.init({
         server: {
-            baseDir: 'public'
+            baseDir: 'docs'
         }
     });
     gulp.watch('src/public/**/**', ['public']).on('change', browserSync.reload);
