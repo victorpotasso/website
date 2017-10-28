@@ -1,0 +1,10 @@
+vp-progress-scrollbar {
+    position: fixed;
+    top:0;
+    left: 4px;
+    display: block;
+    width: 2px;
+    height: 0;
+    background-color: $lines-color;
+    z-index: 999;
+}
