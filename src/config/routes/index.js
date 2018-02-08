@@ -7,6 +7,9 @@ import history from './history';
 
 import DefaultLayout from './../../layout/default';
 import HomeView from './../../view/home';
+import AboutView from './../../view/about';
+import WorksView from './../../view/works';
+import ContactView from './../../view/contact';
 import NotFoundView from './../../view/not-found';
 
 const RouteWithLayout = ({ layout, component, ...rest }) => (
@@ -24,9 +27,19 @@ export default (store) => {
             component={HomeView}
           />
           <RouteWithLayout
-            path="/home/:id"
+            path="/about"
             layout={DefaultLayout}
-            component={HomeView}
+            component={AboutView}
+          />
+          <RouteWithLayout
+            path="/works"
+            layout={DefaultLayout}
+            component={WorksView}
+          />
+          <RouteWithLayout
+            path="/contact"
+            layout={DefaultLayout}
+            component={ContactView}
           />
           <RouteWithLayout
             layout={DefaultLayout}

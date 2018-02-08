@@ -4,6 +4,8 @@ import React from 'react';
 import GridTile from './../grid/tile';
 import SocialList from './../social-list';
 import Image from './../image';
+import CardsContact from './../cards/contact';
+import CardsFooterMessage from './../cards/footer-message';
 
 import './index.css';
 
@@ -12,15 +14,11 @@ class Footer extends React.Component {
     return (
       <div className="Footer">
         <GridTile hover>
-          <p style={{ fontSize: 40 }}>LET'S</p>
-          <p style={{ fontSize: 80 }}>WORK</p>
-          <p style={{ fontSize: 30 }}>TOGETHER</p>
+          <CardsFooterMessage />
         </GridTile>
 
-        <GridTile hover>
-          <p style={{ fontSize: 25 }}>Sao Paulo, Brazil</p>
-          <p style={{ fontSize: 25 }}><a href="tel:+5511981546006" target="_blank">+55 11 98154 6006</a></p>
-          <p style={{ fontSize: 25 }}><a href="mailto:victorpotasso@gmail.com" target="_blank">victorpotasso@gmail.com</a></p>
+        <GridTile>
+          <CardsContact />
         </GridTile>
         
         <GridTile hover>

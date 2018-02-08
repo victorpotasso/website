@@ -14,7 +14,7 @@ class SocialList extends React.Component {
     super(props);
 
     this.state = {
-      fontSize: '4x',
+      fontSize: '3x',
     };
 
     this.onResize = this.onResize.bind(this);
@@ -30,7 +30,7 @@ class SocialList extends React.Component {
 
   onResize() {
     this.setState({
-      fontSize: window.innerWidth > 599 ? '4x' : '2x',
+      fontSize: window.innerWidth > 599 ? '3x' : '2x',
     });
   }
 
@@ -39,17 +39,17 @@ class SocialList extends React.Component {
       <div className="SocialList">
         <ul>
           <li>
-            <a href="" target="_blank" title="Facebook">
+            <a href="https://www.facebook.com/potasso" target="_blank" title="Facebook">
               <FontAwesomeIcon icon={faFacebook} size={this.state.fontSize} />
             </a>
           </li>
           <li>
-            <a href="" target="_blank" title="Twitter">
+            <a href="https://www.twitter.com/victorpotasso" target="_blank" title="Twitter">
               <FontAwesomeIcon icon={faTwitter} size={this.state.fontSize} />
             </a>
           </li>
           <li>
-            <a href="" target="_blank" title="LinkedIn">
+            <a href="https://www.linkedin.com/in/victorpotasso" target="_blank" title="LinkedIn">
               <FontAwesomeIcon icon={faLinkedin} size={this.state.fontSize} />
             </a>
           </li>

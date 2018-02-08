@@ -13,12 +13,12 @@ class BackgroundSky extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener('mousemove', this.onMouseMove);
     this.lastMousePosition = { clientX: 0, clientY: 0 };
     this.ctx = this.canvas.getContext('2d');
     this.create();
 
-    if (this.props.pulse) this.pulse();
+    if (this.props.interactive) window.addEventListener('mousemove', this.onMouseMove);
+    if (this.props.pulse || this.props.interactive) this.pulse();
     else this.draw();
   }
 
@@ -67,8 +67,8 @@ class BackgroundSky extends React.Component {
         randomX: Math.floor((Math.random() * xMax) + 1),
         randomY: Math.floor((Math.random() * yMax) + 1),
         randomSize: Math.floor((Math.random() * 2) + 1),
-        randomOpacityOne: Math.floor((Math.random() * 9) + 1),
-        randomOpacityTwo: Math.floor((Math.random() * 9) + 1),
+        randomOpacityOne: Math.floor((Math.random() * 3) + 1),
+        randomOpacityTwo: Math.floor((Math.random() * 3) + 1),
         randomHue: Math.floor((Math.random() * 360) + 1),
       };
     }
@@ -97,16 +97,17 @@ class BackgroundSky extends React.Component {
       } = this.stars[i];
 
       if (randomSize > 1) {
-        this.ctx.shadowBlur = Math.floor((Math.random() * 15) + 5);
+        // this.ctx.shadowBlur = Math.floor((Math.random() * 15) + 5);
         this.ctx.shadowColor = "#FFFFFF";
       }
+
       this.ctx.fillStyle = "hsla(" + randomHue + ", 30%, 80%, ." + randomOpacityOne + randomOpacityTwo + ")";
       this.ctx.fillRect(randomX, randomY, randomSize, randomSize);
     }
   }
 
   pulse() {
-    this.update();
+    if (this.props.pulse) this.update();
     this.draw();
     requestAnimationFrame(this.pulse);
   }

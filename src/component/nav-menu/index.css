@@ -1,2 +1,25 @@
 .NavMenu {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+
+  .NavMenu__toggleBtn {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    &:hover {
+      transform: scale(0.8);
+    }
+  }
+
+  &--isOpened {
+    .NavMenu__toggleBtn {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: black;
+    }
+  }
 }

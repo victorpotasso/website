@@ -6,7 +6,7 @@ import BackgroundSky from './../../component/background/sky';
 import Grid from './../../component/grid';
 import GridTile from './../../component/grid/tile';
 import Logo from './../../component/logo';
-import NavMenu from './../../component/nav-menu';
+import CardsMenu from './../../component/cards/menu';
 import Footer from './../../component/footer';
 import Image from './../../component/image';
 
@@ -16,19 +16,24 @@ class HomeView extends React.Component {
   render() {
     return (
       <div className="HomeView">
+        <BackgroundSky interactive pulse />
         {/* <BackgroundSky pulse /> */}
-        <BackgroundSky />
+        {/* <BackgroundSky /> */}
         <Grid>
           <GridTile hover>
             <Logo />
           </GridTile>
           
-          <GridTile />
+          <GridTile hover>
+            <p style={{ fontSize: 35 }}>I'm Victor Potasso</p>
+            <p style={{ fontSize: 18 }}>a Front-end Developer and Drummer</p>
+            <p style={{ fontSize: 25 }}>based in Sao Paulo, Brazil</p>
+          </GridTile>
 
           <GridTile />
 
           <GridTile>
-            <NavMenu />
+            <CardsMenu />
           </GridTile>
 
           <GridTile hover>

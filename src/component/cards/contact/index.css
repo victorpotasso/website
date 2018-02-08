@@ -1,0 +1,10 @@
+@import './../../../config/stylesheets/colors.css';
+
+.CardsContact {
+  text-align: center;
+
+  a {
+    color: var(--corlor-white);
+    text-decoration: none;
+  }
+}

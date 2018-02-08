@@ -1,7 +1,5 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/fontawesome-free-solid';
 
 import GridTile from './../grid/tile';
 import LogoLink from './../logo/link';
@@ -13,18 +11,18 @@ class InternalHeader extends React.Component {
   render() {
     return (
       <div className="InternalHeader">
-        <GridTile hover>
+        <GridTile>
           <LogoLink to="/" />
         </GridTile>
 
         <GridTile/>
 
         <GridTile>
-          <NavMenu />
+          <h1 className="InternalHeader__title">{this.props.title}</h1>
         </GridTile>
 
         <GridTile hover>
-          <FontAwesomeIcon icon={faTimes} size="6x" />
+          <NavMenu current={this.props.current} />
         </GridTile>
       </div>
     );
