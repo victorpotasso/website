@@ -5,6 +5,7 @@
     [
       "env",
       {
+        "debug": true,
         "modules": false,
         "targets": {
           "chrome": 52,
@@ -16,5 +17,15 @@
         "useBuiltIns": true
       }
     ]
-  ]
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        [
+          "env"
+        ],
+        "react"
+      ]
+    }
+  }
 }

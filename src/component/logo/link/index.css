@@ -1,0 +1,9 @@
+.LogoLink {
+  width: 50%;
+  height: 50%;
+
+  .Logo {
+    width: 100%;
+    height: 100%;
+  }
+}

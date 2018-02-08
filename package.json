@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=dev webpack-dev-server --progress --config webpack.config.dev.js",
-    "build": "webpack -p --progress --config webpack.config.build.js"
+    "build": "webpack -p --progress --config webpack.config.build.js",
+    "test": "./node_modules/.bin/jest --verbose",
+    "test:watch": "./node_modules/.bin/jest  --verbose --watch"
   },
   "author": "",
   "license": "ISC",
@@ -22,9 +24,13 @@
     "copy-webpack-plugin": "^4.3.1",
     "cross-env": "^5.1.3",
     "css-loader": "^0.28.9",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "file-loader": "^1.1.6",
     "history": "^4.7.2",
     "html-webpack-plugin": "^2.30.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^22.1.4",
     "postcss-browser-reporter": "^0.5.0",
     "postcss-cssnext": "^3.1.0",
     "postcss-import": "^11.0.0",
@@ -38,6 +44,8 @@
     "react-router-redux": "^5.0.0-alpha.9",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
+    "sinon": "^4.2.2",
+    "sinon-as-promised": "^4.0.3",
     "style-loader": "^0.20.1",
     "url-loader": "^0.6.2",
     "webpack": "^3.10.0",
@@ -46,10 +54,45 @@
     "webpack-vendor-chunk-plugin": "^1.0.0"
   },
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.3",
+    "@fortawesome/fontawesome-free-brands": "^5.0.6",
+    "@fortawesome/fontawesome-free-solid": "^5.0.6",
+    "@fortawesome/react-fontawesome": "0.0.17",
     "babel-polyfill": "^6.26.0",
+    "gsap": "^1.20.3",
     "lodash": "^4.17.4",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "whatwg-fetch": "^2.0.3"
+  },
+  "jest": {
+    "testURL": "http://localhost:4001/",
+    "verbose": true,
+    "collectCoverageFrom": [
+      "**/src/{component,container,layout,view}/**/*.{js,jsx}",
+      "!**/*.stories.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/vendor/**"
+    ],
+    "unmockedModulePathPatterns": [
+      "node_modules/react/",
+      "node_modules/enzyme/"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/tests/setup.js",
+    "testPathIgnorePatterns": [
+      "<rootDir>/(build|docs|node_modules)/",
+      "<rootDir>/tests/integrations/"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tests/support/fileStub.js",
+      "\\.(css|scss)$": "identity-obj-proxy"
+    }
   }
 }

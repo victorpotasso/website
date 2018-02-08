@@ -1,0 +1,10 @@
+.Logo {
+  width: 50%;
+  height: 50%;
+  polyline, rect {
+    fill: none;
+    stroke: #ffffff;
+    stroke-miterlimit: 10;
+    stroke-width: 2;
+  }
+}

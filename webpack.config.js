@@ -30,7 +30,7 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src/view/index.html'),
-      title: 'Method Boilerplate',
+      title: 'Victor Potasso | +55 11 98154 6006',
       favicon: path.join(__dirname, 'src/public/favicon.png')
     })
   ],
@@ -54,6 +54,13 @@ module.exports = {
           name: 'assets/images/[path][name].[ext]'
         }
       },
+
+      // FONTS
+
+      // {
+      //   test: /(\.woff|\.woff2|\.svg|.eot|\.ttf)(\?v=\d+\.\d+\.\d+)?$/,
+      //   loader: 'url?name=assets/fonts/[name].[ext]',
+      // },
 
       // CSS
       {

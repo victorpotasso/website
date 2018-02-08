@@ -1,5 +1,5 @@
 .DefaultLayout {
-  &__header {
+  /* &__header {
     border: 2px solid blue;
   }
   &__content {
@@ -8,5 +8,5 @@
 
   &__footer {
     border: 2px solid blue;
-  }
+  } */
 }
