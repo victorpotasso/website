@@ -10,23 +10,47 @@ import {
 import './index.css';
 
 class SocialList extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      fontSize: '4x',
+    };
+
+    this.onResize = this.onResize.bind(this);
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.onResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+  }
+
+  onResize() {
+    this.setState({
+      fontSize: window.innerWidth > 599 ? '4x' : '2x',
+    });
+  }
+
   render() {
     return (
       <div className="SocialList">
         <ul>
           <li>
             <a href="" target="_blank" title="Facebook">
-              <FontAwesomeIcon icon={faFacebook} size="4x" />
+              <FontAwesomeIcon icon={faFacebook} size={this.state.fontSize} />
             </a>
           </li>
           <li>
             <a href="" target="_blank" title="Twitter">
-              <FontAwesomeIcon icon={faTwitter} size="4x" />
+              <FontAwesomeIcon icon={faTwitter} size={this.state.fontSize} />
             </a>
           </li>
           <li>
             <a href="" target="_blank" title="LinkedIn">
-              <FontAwesomeIcon icon={faLinkedin} size="4x" />
+              <FontAwesomeIcon icon={faLinkedin} size={this.state.fontSize} />
             </a>
           </li>
         </ul>

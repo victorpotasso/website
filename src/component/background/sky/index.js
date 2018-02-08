@@ -13,6 +13,7 @@ class BackgroundSky extends React.Component {
   }
 
   componentDidMount() {
+    window.addEventListener('mousemove', this.onMouseMove);
     this.lastMousePosition = { clientX: 0, clientY: 0 };
     this.ctx = this.canvas.getContext('2d');
     this.create();
@@ -21,31 +22,35 @@ class BackgroundSky extends React.Component {
     else this.draw();
   }
 
+  componentWillUnmount() {
+    window.removeEventListener('mousemove', this.onMouseMove);
+  }
+
   onMouseMove({ clientX, clientY }) {
     const directionX = clientX > this.lastMousePosition.clientX ? 1 : -1;
     const directionY = clientY > this.lastMousePosition.clientY ? 1 : -1;
 
-    for (var i = 0; i < this.stars.length; i++) {
-      const distance = this.distance([clientX, clientY], [this.stars[i].randomX, this.stars[i].randomY]);
+    this.stars = _.map(this.stars, (star, i) => {
+      const distance = this.distance([clientX, clientY], [star.randomX, star.randomY]);
       const forceDirection = {
         x: (clientX / distance) * directionX,
         y: (clientY / distance) * directionY,
       };
-  
+
       const maxDistance = window.screen.availWidth * 0.1;
       let force = (maxDistance - distance) / maxDistance;
       if (force < 0) force = 0;
-      
-      const timeElapsedSinceLastFrame = 60;
-      const randomX = distance > maxDistance ? this.starsOriginal[i].randomX : this.stars[i].randomX + (forceDirection.x * force * timeElapsedSinceLastFrame);
-      const randomY = distance > maxDistance ? this.starsOriginal[i].randomY : this.stars[i].randomY + (forceDirection.y * force * timeElapsedSinceLastFrame);
 
-      this.stars[i] = {
-        ...this.stars[i],
+      const timeElapsedSinceLastFrame = 60;
+      const randomX = distance > maxDistance ? this.starsOriginal[i].randomX : star.randomX + (forceDirection.x * force * timeElapsedSinceLastFrame);
+      const randomY = distance > maxDistance ? this.starsOriginal[i].randomY : star.randomY + (forceDirection.y * force * timeElapsedSinceLastFrame);
+
+      return {
+        ...star,
         randomX,
         randomY,
       }
-    }
+    });
 
     this.lastMousePosition = { clientX, clientY };
   }
@@ -72,12 +77,10 @@ class BackgroundSky extends React.Component {
   }
 
   update() {
-    for (var i = 0; i < this.stars.length; i++) {
-      this.stars[i] = {
-        ...this.stars[i],
-        randomSize: Math.floor((Math.random() * 2) + 1),
-      }
-    }
+    this.stars = _.map(this.stars, star => ({
+      ...star,
+      randomSize: Math.floor((Math.random() * 2) + 1),
+    }));
   }
 
   draw() {    
@@ -121,7 +124,6 @@ class BackgroundSky extends React.Component {
       <canvas
         className="BackgroundSky"
         ref={(ref) => { this.canvas = ref; }}
-        onMouseMove={this.onMouseMove}
       >
       </canvas>);
   }
