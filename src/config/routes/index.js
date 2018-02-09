@@ -13,40 +13,41 @@ import ContactView from './../../view/contact';
 import NotFoundView from './../../view/not-found';
 
 const RouteWithLayout = ({ layout, component, ...rest }) => (
-  <Route {...rest} render={(props) => React.createElement(layout, props, React.createElement(component, props))} />
+  <Route {...rest} render={(props) => {
+    console.log('>>>', props);
+    return React.createElement(layout, props, React.createElement(component, props));
+  }} />
 );
 
 export default (store) => {
   return (
     <ConnectedRouter history={history}>
-      <BrowserRouter>
-        <Switch>
-          <RouteWithLayout
-            exact path="/"
-            layout={DefaultLayout}
-            component={HomeView}
-          />
-          <RouteWithLayout
-            path="/about"
-            layout={DefaultLayout}
-            component={AboutView}
-          />
-          <RouteWithLayout
-            path="/works"
-            layout={DefaultLayout}
-            component={WorksView}
-          />
-          <RouteWithLayout
-            path="/contact"
-            layout={DefaultLayout}
-            component={ContactView}
-          />
-          <RouteWithLayout
-            layout={DefaultLayout}
-            component={NotFoundView}
-          />
-        </Switch>
-      </BrowserRouter>
+      <Switch>
+        <RouteWithLayout
+          exact path="/"
+          layout={DefaultLayout}
+          component={HomeView}
+        />
+        <RouteWithLayout
+          path="/about"
+          layout={DefaultLayout}
+          component={AboutView}
+        />
+        <RouteWithLayout
+          path="/works"
+          layout={DefaultLayout}
+          component={WorksView}
+        />
+        <RouteWithLayout
+          path="/contact"
+          layout={DefaultLayout}
+          component={ContactView}
+        />
+        <RouteWithLayout
+          layout={DefaultLayout}
+          component={NotFoundView}
+        />
+      </Switch>
     </ConnectedRouter>
   );
 };

@@ -1,6 +1,6 @@
 @import './../../../config/stylesheets/colors.css';
 
-.CardsMenu {
+.CardsMenuContainer {
   width: 100%;
   height: 100%;
   display: flex;

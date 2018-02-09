@@ -5,7 +5,7 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/fontawesome-free-solid';
 import cn from 'classnames';
 
-import CardsMenu from './../cards/menu';
+import CardsMenuContainer from './../../container/cards/menu';
 
 import './index.css';
 
@@ -28,7 +28,7 @@ class NavMenu extends React.Component {
     return (
       <div className={cn('NavMenu', { 'NavMenu--isOpened': this.state.isOpened })}>
         {this.state.isOpened &&
-          <CardsMenu inverted current={this.props.current} />
+          <CardsMenuContainer inverted current={this.props.current} />
         }
         <FontAwesomeIcon
           className="NavMenu__toggleBtn"

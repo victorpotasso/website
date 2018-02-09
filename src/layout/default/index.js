@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './index.css';
 
-class DefaultLayout extends React.Component {
+class DefaultLayout extends React.PureComponent {
   render() {
     return (
       <div className="DefaultLayout">

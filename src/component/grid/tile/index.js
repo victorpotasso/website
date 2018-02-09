@@ -1,6 +1,8 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-import { TweenMax } from "gsap";
+import PropTypes from 'prop-types';
+import { TweenMax, Cubic } from "gsap";
+
+// import transitions from './index.transitions';
 
 import './index.css';
 
@@ -10,12 +12,38 @@ class GridTile extends React.Component {
 
     this.state = {
       shouldMove: false,
+      in: true,
     }
 
     this.onMouseOver = this.onMouseOver.bind(this);
     this.onMouseOut = this.onMouseOut.bind(this);
     this.onMouseMove = this.onMouseMove.bind(this);
     this.onMouseOutComplete = this.onMouseOutComplete.bind(this);
+  }
+
+  // componentDidMount() {
+  //   TweenMax.fromTo(
+  //     this.content,
+  //     0.5,
+  //     transitions[this.props.transition].enter.from,
+  //     {
+  //       ...transitions[this.props.transition].enter.to,
+  //       delay: Math.random() * 2,
+  //     },
+  //   );
+  // }
+
+  componentWillUnmount() {
+    // TweenMax.fromTo(
+    //   this.content,
+    //   0.5,
+    //   transitions[this.props.transition].leave.from,
+    //   {
+    //     ...transitions[this.props.transition].leave.to,
+    //     delay: Math.random() * 2,
+    //   },
+    // );
+    this.setState({ in: false });
   }
 
   onMouseOver() {
@@ -54,6 +82,16 @@ class GridTile extends React.Component {
   }
 
   render() {
+    const defaultStyle = {
+      transition: `opacity 5000ms ease-in-out`,
+      opacity: 0,
+    }
+
+    const transitionStyles = {
+      entering: { opacity: 0 },
+      entered: { opacity: 1 },
+    };
+
     return (
       <div
         className="GridTile"
@@ -77,8 +115,12 @@ class GridTile extends React.Component {
   }
 }
 
-GridTile.propTypes = {};
+GridTile.propTypes = {
+  transition: PropTypes.string,
+};
 
-GridTile.defaultProps = {};
+GridTile.defaultProps = {
+  transition: 'alpha',
+};
 
 export default GridTile;

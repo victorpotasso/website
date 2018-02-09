@@ -13,6 +13,8 @@
   perspective: 1000px;
   transform-style: preserve-3d; 
 
+  overflow: hidden;
+
   @media (--gt-sm) {
     width: 25vw;
     height: 25vw;
