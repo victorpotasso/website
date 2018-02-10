@@ -28,7 +28,7 @@ class NavMenu extends React.Component {
     return (
       <div className={cn('NavMenu', { 'NavMenu--isOpened': this.state.isOpened })}>
         {this.state.isOpened &&
-          <CardsMenuContainer inverted current={this.props.current} />
+          <CardsMenuContainer inverted current={this.props.current} onClick={this.onClick} />
         }
         <FontAwesomeIcon
           className="NavMenu__toggleBtn"

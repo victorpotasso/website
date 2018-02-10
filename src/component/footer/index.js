@@ -13,22 +13,22 @@ class Footer extends React.Component {
   render() {
     return (
       <div className="Footer">
-        <GridTile hover>
+        <GridTile hover transition={this.props.transition}>
           <CardsFooterMessage />
         </GridTile>
 
-        <GridTile>
+        <GridTile transition={this.props.transition}>
           <CardsContact />
         </GridTile>
         
-        <GridTile hover>
+        <GridTile hover transition={this.props.transition}>
           <Image
             src="https://instagram.fcgh9-1.fna.fbcdn.net/vp/1ae4878db3a9ee6d9f948dda10a018c8/5B11CCAF/t51.2885-15/s640x640/sh0.08/e35/24175584_394739537629886_2062920264542322688_n.jpg"
             fluid
           />
         </GridTile>
 
-        <GridTile>
+        <GridTile transition={this.props.transition}>
           <SocialList />
         </GridTile>
       </div>

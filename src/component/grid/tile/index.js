@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { TweenMax, Cubic } from "gsap";
 
-// import transitions from './index.transitions';
+import transitions from './index.transitions';
 
 import './index.css';
 
@@ -12,7 +12,6 @@ class GridTile extends React.Component {
 
     this.state = {
       shouldMove: false,
-      in: true,
     }
 
     this.onMouseOver = this.onMouseOver.bind(this);
@@ -21,29 +20,30 @@ class GridTile extends React.Component {
     this.onMouseOutComplete = this.onMouseOutComplete.bind(this);
   }
 
-  // componentDidMount() {
-  //   TweenMax.fromTo(
-  //     this.content,
-  //     0.5,
-  //     transitions[this.props.transition].enter.from,
-  //     {
-  //       ...transitions[this.props.transition].enter.to,
-  //       delay: Math.random() * 2,
-  //     },
-  //   );
-  // }
+  componentDidMount() {
+    TweenMax.fromTo(
+      this.content,
+      0.5,
+      transitions['alpha'].enter.from,
+      {
+        ...transitions['alpha'].enter.to,
+        delay: Math.random(),
+      },
+    );
+  }
 
-  componentWillUnmount() {
-    // TweenMax.fromTo(
-    //   this.content,
-    //   0.5,
-    //   transitions[this.props.transition].leave.from,
-    //   {
-    //     ...transitions[this.props.transition].leave.to,
-    //     delay: Math.random() * 2,
-    //   },
-    // );
-    this.setState({ in: false });
+  componentWillReceiveProps(nextProps) {
+    if (_.has(nextProps, 'transition.leaving')) {
+      TweenMax.fromTo(
+        this.content,
+        0.5,
+        transitions['alpha'].leave.from,
+        {
+          ...transitions['alpha'].leave.to,
+          delay: Math.random(),
+        },
+      );
+    }
   }
 
   onMouseOver() {
@@ -116,11 +116,11 @@ class GridTile extends React.Component {
 }
 
 GridTile.propTypes = {
-  transition: PropTypes.string,
+  transition: PropTypes.shape({}),
 };
 
 GridTile.defaultProps = {
-  transition: 'alpha',
+  transition: null,
 };
 
 export default GridTile;

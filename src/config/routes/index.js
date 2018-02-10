@@ -13,10 +13,7 @@ import ContactView from './../../view/contact';
 import NotFoundView from './../../view/not-found';
 
 const RouteWithLayout = ({ layout, component, ...rest }) => (
-  <Route {...rest} render={(props) => {
-    console.log('>>>', props);
-    return React.createElement(layout, props, React.createElement(component, props));
-  }} />
+  <Route {...rest} render={props => React.createElement(layout, props, React.createElement(component, props))} />
 );
 
 export default (store) => {

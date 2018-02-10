@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import LogoLink from './index';
+import ViewAboutContainer from './index';
 
-describe('LogoLink', () => {
-    const component = shallow(<LogoLink />);
+describe('ViewAboutContainer', () => {
+    const component = shallow(<ViewAboutContainer />);
 
     test('renders without exploding', () => {
         expect(component.length).toEqual(1);
