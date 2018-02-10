@@ -7,14 +7,20 @@ import './index.css';
 class Image extends React.Component {
   render() {
     return (
-      <img
-        className={cn(
-          'Image',
-          {
-            'Image--fluid': this.props.fluid,
-          }
-        )}
-        src={this.props.src}
+      // <img
+      //   className={cn(
+      //     'Image',
+      //     {
+      //       'Image--fluid': this.props.fluid,
+      //     }
+      //   )}
+      //   src={this.props.src}
+      // />
+      <div
+        className={cn('Image', { 'Image--fluid': this.props.fluid })}
+        style={{
+          backgroundImage: `url('${this.props.src}')`,
+        }}
       />
     );
   }

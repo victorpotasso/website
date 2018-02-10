@@ -11,14 +11,26 @@
   &__list {
     display: table;
     &__item {
+      min-width: 115px;
+
       a {
         color: var(--corlor-white);
         text-decoration: none;
         font-size: 30px;
+        cursor: pointer;
 
         &:hover {
           font-weight: bold;
           transition: all 0.2s ease;
+        }
+
+        &:after {
+          display: block;
+          content: '';
+          font-weight: bold;
+          height: 0;
+          overflow: hidden;
+          visibility: hidden;
         }
       }
 

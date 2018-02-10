@@ -1,0 +1,22 @@
+@keyframes shake {
+  0%   { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+  100% { transform: translateX(0); }
+}
+
+.CardsContentTitle {
+  width: 80%;
+  display: flex;
+  align-items: center;
+
+  &__arrow {
+    animation: shake 1s infinite;
+  }
+
+  &__text {
+    flex: 1;
+    font-size: 40px;
+    text-transform: uppercase;
+    line-height: 1em;
+  }
+}

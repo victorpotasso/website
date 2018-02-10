@@ -1,5 +1,11 @@
 .Image {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+
   &--fluid {
-    width: 100%;
+    background-size: cover;
+    background-position: center;
   }
 }

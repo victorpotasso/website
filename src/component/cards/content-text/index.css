@@ -1,0 +1,11 @@
+.CardsContentText {
+  width: 80%;
+  display: flex;
+  align-items: center;
+
+  &__text {
+    flex: 1;
+    font-size: 15px;
+    line-height: 1em;
+  }
+}

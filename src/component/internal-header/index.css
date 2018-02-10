@@ -1,4 +1,9 @@
 .InternalHeader {
   display: flex;
   flex-wrap: wrap;
+
+  &__title {
+    font-family: 'Rammetto One', cursive;
+    font-size: 35px;
+  }
 }

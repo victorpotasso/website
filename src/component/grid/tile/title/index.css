@@ -1,0 +1,11 @@
+.GridTileTitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  text-shadow: 2px 2px rgba(0,0,0,.3);
+  pointer-events: none;
+  width: 90%;
+  text-align: center;
+  line-height: 1em;
+}
