@@ -28,63 +28,77 @@ class ViewWorksContainer extends React.Component {
             transition={this.props.navigationStatus}
           />
 
-          <GridTile transition={this.props.navigationStatus}>
-            <CardsContentTitle text="What I've done" />
+          <GridTile hover transition={this.props.navigationStatus}>
+            <CardsContentTitle text="What<br/>I've<br/>done" />
           </GridTile>
-
           <GridTile transition={this.props.navigationStatus}>
             <CardsContentText text="These are just some of my works throughout the last years." />
           </GridTile>
 
+          <GridTile hover transition={this.props.navigationStatus}>
+            <GridTileTitle text="Win with<br/>Vodafone" />
+          </GridTile>
           <GridTile transition={this.props.navigationStatus}>
-            Win with Vodafone | Method
+            <CardsContentText text="Freelance for Method NZ" />
           </GridTile>
 
+          <GridTile hover transition={this.props.navigationStatus}>
+            <GridTileTitle text="Webserie:<br/>Na lata" />
+          </GridTile>
           <GridTile transition={this.props.navigationStatus}>
-            Webserie: Na lata | Slikland
+            <CardsContentText text="Webserie: Na lata<br/>Slikland" />
           </GridTile>
 
           <GridTile hover transition={this.props.navigationStatus}>
             <GridTileTitle text="Troller<br/>Bold" />
-            <Image
+            {/* <Image
               src={require('./images/trollerbold.png')}
               fluid
-            />
+            /> */}
+          </GridTile>
+          <GridTile transition={this.props.navigationStatus}>
+            <CardsContentText text="Troller Bold<br/>The Goodfellas" />
           </GridTile>
 
           <GridTile hover transition={this.props.navigationStatus}>
             <GridTileTitle text="ABCDogs" />
-            <Image
+            {/* <Image
               src={require('./images/abcdogs.png')}
               fluid
-            />
+            /> */}
+          </GridTile>
+          <GridTile transition={this.props.navigationStatus}>
+            <CardsContentText text="ABCDogs<br/>The Goodfellas" />
           </GridTile>
 
           <GridTile hover transition={this.props.navigationStatus}>
             <GridTileTitle text="Renda Fixa<br/>Web App" />
-            <Image
+            {/* <Image
               src={require('./images/renda-fixa.png')}
               fluid
-            />
+            /> */}
+          </GridTile>
+          <GridTile transition={this.props.navigationStatus}>
+            <CardsContentText text="Web app<br/>Renda Fixa" />
           </GridTile>
 
           <GridTile hover transition={this.props.navigationStatus}>
             <GridTileTitle text="Goodwill<br>Frames" />
-            <Image
+            {/* <Image
               src={require('./images/goodwill-frames.jpg')}
               fluid
-            />
+            /> */}
           </GridTile>
-
           <GridTile transition={this.props.navigationStatus}>
-            Portal Nissin | Slikland
+            <CardsContentText text="Goodwill Frames<br/>Santa I/O" />
           </GridTile>
 
-          <GridTile />
-
-          <GridTile />
-
-          <GridTile />
+          <GridTile hover transition={this.props.navigationStatus}>
+            <GridTileTitle text="Portal<br/>Nissin" />
+          </GridTile>
+          <GridTile transition={this.props.navigationStatus}>
+            <CardsContentText text="Portal Nissin<br/>Slikland" />
+          </GridTile>
 
           <Footer transition={this.props.navigationStatus} />
         </Grid>

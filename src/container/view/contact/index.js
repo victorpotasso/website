@@ -7,6 +7,8 @@ import Grid from './../../../component/grid';
 import GridTile from './../../../component/grid/tile';
 import InternalHeader from './../../../component/internal-header';
 import Footer from './../../../component/footer';
+import CardsContentTitle from './../../../component/cards/content-title';
+import CardsContentText from './../../../component/cards/content-text';
 
 import * as AppSelectors from './../../../data/app/selectors';
 
@@ -24,9 +26,12 @@ class ViewContactContainer extends React.Component {
             transition={this.props.navigationStatus}
           />
 
-          <GridTile />
-
-          <GridTile />
+          <GridTile transition={this.props.navigationStatus}>
+            <CardsContentTitle text="Where I live?" />
+          </GridTile>
+          <GridTile transition={this.props.navigationStatus}>
+            <CardsContentText text="Lorem ipsum!" />
+          </GridTile>
 
           <GridTile />
 

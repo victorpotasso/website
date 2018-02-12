@@ -20,7 +20,7 @@ class NavMenu extends React.Component {
     this.onClick = this.onClick.bind(this);
   }
 
-  onClick() {
+  onClick(pathname) {
     this.setState({ isOpened: !this.state.isOpened });
   }
 
@@ -28,7 +28,11 @@ class NavMenu extends React.Component {
     return (
       <div className={cn('NavMenu', { 'NavMenu--isOpened': this.state.isOpened })}>
         {this.state.isOpened &&
-          <CardsMenuContainer inverted current={this.props.current} onClick={this.onClick} />
+          <CardsMenuContainer
+            inverted
+            current={this.props.current}
+            onClick={this.onClick}
+          />
         }
         <FontAwesomeIcon
           className="NavMenu__toggleBtn"

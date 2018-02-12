@@ -9,7 +9,9 @@ class CardsContentTitle extends React.Component {
   render() {
     return (
       <div className="CardsContentTitle">
-        <h1 className="CardsContentTitle__text">{this.props.text}</h1>
+        <h1 className="CardsContentTitle__text">
+          <span dangerouslySetInnerHTML={{ __html: this.props.text }} />
+        </h1>
         <FontAwesomeIcon
           className="CardsContentTitle__arrow"
           size="2x"
