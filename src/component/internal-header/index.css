@@ -3,7 +3,7 @@
   flex-wrap: wrap;
 
   &__title {
-    font-family: 'Rammetto One', cursive;
-    font-size: 35px;
+    font-family: 'Lobster', cursive;
+    font-size: 60px;
   }
 }

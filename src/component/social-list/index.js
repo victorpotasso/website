@@ -2,7 +2,7 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import {
-  faFacebook,
+  faGithub,
   faTwitter,
   faLinkedin,
 } from '@fortawesome/fontawesome-free-brands';
@@ -39,8 +39,8 @@ class SocialList extends React.Component {
       <div className="SocialList">
         <ul>
           <li>
-            <a href="https://www.facebook.com/potasso" target="_blank" title="Facebook">
-              <FontAwesomeIcon icon={faFacebook} size={this.state.fontSize} />
+            <a href="https://www.github.com/victorpotasso" target="_blank" title="Github">
+              <FontAwesomeIcon icon={faGithub} size={this.state.fontSize} />
             </a>
           </li>
           <li>

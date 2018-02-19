@@ -6,8 +6,10 @@
       margin: 0 10px;
       a {
         color: white;
+        transition: color 0.2s ease;
         &:hover {
           color: rgb(54, 178, 250);
+          transition: color 0.2s ease;
         }
       }
     }

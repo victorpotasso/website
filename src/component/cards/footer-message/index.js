@@ -7,9 +7,9 @@ class CardsFooterMessage extends React.Component {
   render() {
     return (
       <div className="CardsFooterMessage">
-        <p>LET'S</p>
-        <p>WORK</p>
-        <p>TOGETHER</p>
+        <p>How</p>
+        <p>can you</p>
+        <p>find me?</p>
       </div>
     );
   }

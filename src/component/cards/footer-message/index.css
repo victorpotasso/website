@@ -1,15 +1,16 @@
 .CardsFooterMessage {
-  font-family: 'Rammetto One', cursive;
+  font-family: 'Lobster', cursive;
 
   p {
     &:nth-child(1) {
-      font-size: 53px;
+      font-size: 80px;
+      line-height: 0.8em;
     }
     &:nth-child(2) {
-      font-size: 40px;
+      font-size: 42px;
     }
     &:nth-child(3) {
-      font-size: 25px;
+      font-size: 40px;
     }
   }
 }

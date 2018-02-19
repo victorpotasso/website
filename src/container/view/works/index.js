@@ -11,6 +11,7 @@ import InternalHeader from './../../../component/internal-header';
 import Footer from './../../../component/footer';
 import CardsContentTitle from './../../../component/cards/content-title';
 import CardsContentText from './../../../component/cards/content-text';
+import CardsWorkDetails from './../../../component/cards/work-details';
 
 import * as AppSelectors from './../../../data/app/selectors';
 
@@ -39,14 +40,25 @@ class ViewWorksContainer extends React.Component {
             <GridTileTitle text="Win with<br/>Vodafone" />
           </GridTile>
           <GridTile transition={this.props.navigationStatus}>
-            <CardsContentText text="Freelance for Method NZ" />
+            <CardsWorkDetails
+              company="Method"
+              companyLink="http://method.digital/"
+              role="Front End Developer"
+              // description=""
+            />
           </GridTile>
 
           <GridTile hover transition={this.props.navigationStatus}>
-            <GridTileTitle text="Webserie:<br/>Na lata" />
+            <GridTileTitle text="Webserie<br/>Na lata" />
           </GridTile>
           <GridTile transition={this.props.navigationStatus}>
-            <CardsContentText text="Webserie: Na lata<br/>Slikland" />
+            <CardsWorkDetails
+              company="Slikland"
+              companyLink="http://www.slikland.com/"
+              role="Front End Developer"
+              // description=""
+              link="http://www.antarctica.com.br/campanhas/nalata"
+            />
           </GridTile>
 
           <GridTile hover transition={this.props.navigationStatus}>
@@ -57,18 +69,29 @@ class ViewWorksContainer extends React.Component {
             /> */}
           </GridTile>
           <GridTile transition={this.props.navigationStatus}>
-            <CardsContentText text="Troller Bold<br/>The Goodfellas" />
+            <CardsWorkDetails
+              company="The Goodfellas"
+              companyLink="http://thegoodfellas.com.br/"
+              role="Front End Developer"
+            // description=""
+            />
           </GridTile>
 
           <GridTile hover transition={this.props.navigationStatus}>
             <GridTileTitle text="ABCDogs" />
-            {/* <Image
+            <Image
               src={require('./images/abcdogs.png')}
               fluid
-            /> */}
+            />
           </GridTile>
           <GridTile transition={this.props.navigationStatus}>
-            <CardsContentText text="ABCDogs<br/>The Goodfellas" />
+            <CardsWorkDetails
+              company="The Goodfellas"
+              companyLink="http://thegoodfellas.com.br/"
+              role="Front End Developer"
+            // description=""
+              link="http://www.abcdogs.com.br/"
+            />
           </GridTile>
 
           <GridTile hover transition={this.props.navigationStatus}>
@@ -79,7 +102,13 @@ class ViewWorksContainer extends React.Component {
             /> */}
           </GridTile>
           <GridTile transition={this.props.navigationStatus}>
-            <CardsContentText text="Web app<br/>Renda Fixa" />
+            <CardsWorkDetails
+              company="Renda Fixa App"
+              companyLink="http://rendafixa.rocks/"
+              role="Full Stack Developer"
+              description="Web app developed with Angular 1.x and material design concepts. The chat's API was developed in NODE and the regular API in Python"
+              link="https://www.apprendafixa.com.br"
+            />
           </GridTile>
 
           <GridTile hover transition={this.props.navigationStatus}>
@@ -90,14 +119,26 @@ class ViewWorksContainer extends React.Component {
             /> */}
           </GridTile>
           <GridTile transition={this.props.navigationStatus}>
-            <CardsContentText text="Goodwill Frames<br/>Santa I/O" />
+            <CardsWorkDetails
+              company="Santa I/O"
+              companyLink="http://www.santa.io/"
+              role="Front End Developer"
+              // description=""
+              link="https://www.framedobem.com.br/"
+            />
           </GridTile>
 
           <GridTile hover transition={this.props.navigationStatus}>
             <GridTileTitle text="Portal<br/>Nissin" />
           </GridTile>
           <GridTile transition={this.props.navigationStatus}>
-            <CardsContentText text="Portal Nissin<br/>Slikland" />
+            <CardsWorkDetails
+              company="Slikland"
+              companyLink="http://www.slikland.com/"
+              role="Front End Developer"
+            // description=""
+              link="https://www.nissin.com.br/"
+            />
           </GridTile>
 
           <Footer transition={this.props.navigationStatus} />
