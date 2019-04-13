@@ -1,9 +1,0 @@
-.InternalHeader {
-  display: flex;
-  flex-wrap: wrap;
-
-  &__title {
-    font-family: 'Lobster', cursive;
-    font-size: 60px;
-  }
-}

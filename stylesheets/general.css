@@ -1,0 +1,17 @@
+body {
+  font-family: 'SpaceMono-Regular';
+  background-color: var(--color-very-dark-gray);
+  color: var(--color-lightest-dark-gray);
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  width: 80px;
+}
+
+.logo path {
+  fill: none;
+  stroke: var(--color-blue);
+  stroke-width: 4px;
+}
