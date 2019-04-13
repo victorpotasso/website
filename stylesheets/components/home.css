@@ -18,15 +18,15 @@ vp-home .wrapper {
 }
 
 vp-home .wrapper .greeting {
-  font-size: 48px;
+  font-size: var(--font-size-subtitle);
   margin: 0;
 }
 
 vp-home .wrapper .name {
-  font-size: 60px;
+  font-size: var(--font-size-title);
   margin: 0;
 }
 
 vp-home .wrapper p {
-  font-size: 24px;
+  font-size: var(--font-size-paragraph);
 }

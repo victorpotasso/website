@@ -12,7 +12,11 @@ vp-cursor {
   border-radius: 100%;
 
   opacity: 1;
-  transition: opacity 1s ease-out;
+  transition: opacity 1s ease-out, transform 0.35s ease-out;
+}
+
+vp-cursor.highlight {
+  transform: scale(1.5);
 }
 
 vp-cursor.hidden {
