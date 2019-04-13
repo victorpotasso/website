@@ -1,0 +1,13 @@
+vp-cursor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  pointer-events: none;
+
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: var(--color-lightest-dark-gray);
+  border-radius: 100%;
+}

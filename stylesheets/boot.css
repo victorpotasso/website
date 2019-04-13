@@ -2,4 +2,5 @@
 @import 'fonts.css';
 @import 'general.css';
 
+@import 'components/cursor.css';
 @import 'components/home.css';

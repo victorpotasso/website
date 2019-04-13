@@ -7,6 +7,7 @@ export default [
     prefix: 'vp',
     components: [
       '../components/home.js',
+      '../components/cursor.js',
     ],
     customLoader: ComponentsLoader,
   },
