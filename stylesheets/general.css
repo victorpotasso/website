@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'SpaceMono-Regular';
   background-color: var(--color-very-dark-gray);

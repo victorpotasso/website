@@ -14,6 +14,7 @@ vp-home {
 vp-home .wrapper {
   width: 100vw;
   max-width: 550px;
+  padding: 15px;
 }
 
 vp-home .wrapper .greeting {

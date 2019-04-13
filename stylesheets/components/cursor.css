@@ -10,4 +10,11 @@ vp-cursor {
   height: 10px;
   background-color: var(--color-lightest-dark-gray);
   border-radius: 100%;
+
+  opacity: 1;
+  transition: opacity 1s ease-out;
+}
+
+vp-cursor.hidden {
+  opacity: 0;
 }

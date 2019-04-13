@@ -7,7 +7,6 @@ export default class Cursor extends HTMLElement {
   }
 
   connectedCallback() {
-    console.log('Cursor');
     window.addEventListener('mousemove', this.onMouseMove)
   }
 
@@ -18,5 +17,7 @@ export default class Cursor extends HTMLElement {
 
     const action = target.dataset.cursorAction;
     TweenMax.to(this, 0.35, { scale: action == 'highlight' ? 1.5 : 1, ease: Power0.easeInOut });
+
+    this.classList.remove('hidden');
   }
 }
