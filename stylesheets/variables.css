@@ -14,4 +14,7 @@
   --color-lightest-dark-gray: #969696;
   --color-dark-grayish-blue: #37373D;
   --color-light-gray: #C6C6C6;
+
+  --vw: 1vw;
+  --vh: 1vh;
 }
