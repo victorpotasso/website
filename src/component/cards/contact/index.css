@@ -3,6 +3,10 @@
 .CardsContact {
   text-align: center;
 
+  &__email {
+    font-size: 12px;
+  }
+
   a {
     color: var(--corlor-white);
     text-decoration: none;

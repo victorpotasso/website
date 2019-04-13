@@ -10,7 +10,7 @@ module.exports = merge(webpackConfig, {
   output: {
     path: path.join(__dirname, 'docs'),
     filename: 'assets/[name].js',
-    // publicPath: '/'
+    publicPath: '/'
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({

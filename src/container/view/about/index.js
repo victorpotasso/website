@@ -30,7 +30,7 @@ class ViewAboutContainer extends React.Component {
             <CardsContentTitle text="A little brief about me" />
           </GridTile>
           <GridTile transition={this.props.navigationStatus}>
-            <CardsContentText text="Lorem ipsum!" />
+            <CardsContentText text="I was born and raised in Sao Paulo, Brazil and living in Auckland. I have a plant based diet (strict vegetarian), play drums, music lover and trying to get a healthy life." />
           </GridTile>
 
           <GridTile transition={this.props.navigationStatus}>
@@ -48,10 +48,10 @@ class ViewAboutContainer extends React.Component {
           </GridTile>
 
           <GridTile transition={this.props.navigationStatus}>
-            <CardsContentTitle text="Things I'm<br/>passionate" />
+            <CardsContentTitle text="Cool<br/>subjects" />
           </GridTile>
           <GridTile transition={this.props.navigationStatus}>
-            <CardsContentText text="Math, Physics, Music" />
+            <CardsContentText text="Math, Physics, Music, Engineering" />
           </GridTile>
 
           <Footer transition={this.props.navigationStatus} />

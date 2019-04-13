@@ -27,7 +27,7 @@ class ViewHomeContainer extends React.Component {
           </GridTile>
 
           <GridTile transition={this.props.navigationStatus} hover>
-            <p style={{ fontSize: 35 }}>Victor Potasso</p>
+            <p style={{ fontSize: 35, textAlign: 'center' }}>Victor Potasso</p>
             <p style={{ fontSize: 18 }}>Front End Developer</p>
           </GridTile>
 

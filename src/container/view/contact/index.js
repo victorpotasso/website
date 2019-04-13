@@ -30,7 +30,7 @@ class ViewContactContainer extends React.Component {
             <CardsContentTitle text="Where I live?" />
           </GridTile>
           <GridTile transition={this.props.navigationStatus}>
-            <CardsContentText text="Lorem ipsum!" />
+            <CardsContentText text="Auckland, New Zealand" />
           </GridTile>
 
           <GridTile />

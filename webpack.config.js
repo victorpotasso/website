@@ -30,7 +30,7 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src/view/index.html'),
-      title: 'Victor Potasso | +55 11 98154 6006',
+      title: 'Victor Potasso | victorpotasso@gmail.com',
       favicon: path.join(__dirname, 'src/public/favicon.png')
     })
   ],
