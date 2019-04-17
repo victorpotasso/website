@@ -18,15 +18,19 @@
   --vw: 1vw;
   --vh: 1vh;
 
+  --body-padding: 15px;
+
   --font-size-title: 60px;
   --font-size-subtitle: 48px;
   --font-size-paragraph: 24px;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 768px) {
   :root {
-    --font-size-title: 30px;
+    --body-padding: 5vw;
+
+    --font-size-title: 38px;
     --font-size-subtitle: 22px;
-    --font-size-paragraph: 16px;
+    --font-size-paragraph: 20px;
   }
 }

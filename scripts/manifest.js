@@ -8,6 +8,7 @@ export default [
     components: [
       '../components/home.js',
       '../components/cursor.js',
+      '../components/nav-button.js',
     ],
     customLoader: ComponentsLoader,
   },

@@ -5,7 +5,6 @@ export default function ComponentsLoader({ prefix, components }) {
       components.map(async (componentPath) => {
         const component = await import(componentPath);
         const element = `${prefix}-${component.default.name.toLowerCase()}`;
-
         customElements.define(element, component.default);
 
         response.push(element);

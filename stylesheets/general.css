@@ -29,8 +29,8 @@ body {
 
 .logo {
   position: fixed;
-  top: 15px;
-  left: 15px;
+  top: var(--body-padding);
+  left: var(--body-padding);
   width: 80px;
 }
 
@@ -38,4 +38,11 @@ body {
   fill: none;
   stroke: var(--color-blue);
   stroke-width: 4px;
+}
+
+.btn-cv {
+  position: fixed;
+  top: var(--body-padding);
+  right: var(--body-padding);
+  font-size: var(--font-size-paragraph);
 }
