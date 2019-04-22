@@ -40,6 +40,7 @@ body {
   stroke: var(--color-blue);
   stroke-width: 4px;
   transition: transform 0.35s ease;
+  pointer-events: none;
 }
 
 .logo:hover .letter-v {
