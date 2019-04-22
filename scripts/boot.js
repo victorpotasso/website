@@ -1,6 +1,7 @@
-import { useQueue } from 'https://unpkg.com/@jsdevs-sp/queue-hook@0.0.7/lib/index.js';
 // import { TweenMax } from 'https://unpkg.com/gsap@2.1.2/index.js';
 // import TweenMax from 'https://unpkg.com/gsap@2.1.2/TweenMax.js';
+import { useQueue } from 'https://unpkg.com/@jsdevs-sp/queue-hook@0.0.7/lib/index.js';
+import { viewport } from './utils/device.js';
 
 async function boot() {
   const manifest = await import('./manifest.js');
@@ -16,10 +17,9 @@ async function boot() {
   onResize();
 
   function onResize() {
-    const vw = window.innerWidth * 0.01;
-    const vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vw', `${vw}px`);
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    const { width, height } = viewport();
+    document.documentElement.style.setProperty('--vw', `${width}px`);
+    document.documentElement.style.setProperty('--vh', `${height}px`);
   }
 }
 

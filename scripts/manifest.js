@@ -6,9 +6,9 @@ export default [
     label: 'Register components',
     prefix: 'vp',
     components: [
-      '../components/home.js',
-      '../components/cursor.js',
-      '../components/nav-button.js',
+      './../../components/home.js',
+      './../../components/cursor.js',
+      './../../components/nav-button.js',
     ],
     customLoader: ComponentsLoader,
   },

@@ -6,15 +6,17 @@ vp-home {
   justify-content: center;
   align-items: center;
   width: 100vw;
-  width: calc(var(--vw, 1vw) * 100);
+  width: var(--vw);
   height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
+  height: var(--vh);
 }
 
 vp-home .wrapper {
   width: 100vw;
   max-width: 550px;
   padding: var(--body-padding);
+  opacity: 1 !important;
+  transition: opacity 0.35s ease;
 }
 
 @media (max-width: 768px) {

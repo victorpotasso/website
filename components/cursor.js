@@ -1,6 +1,11 @@
 export default class Cursor extends HTMLElement {
   constructor() {
     super();
+
+    const style = document.createElement('style');
+    style.textContent = '@import url("./components/cursor.css")';
+    document.head.appendChild(style);
+
     this.onMouseMove = this.onMouseMove.bind(this);
   }
 
@@ -15,6 +20,7 @@ export default class Cursor extends HTMLElement {
     this.style.top = `${y}px`;
 
     const action = target.dataset.cursorAction;
+
     if (action == 'highlight')
       this.classList.add('highlight');
     else

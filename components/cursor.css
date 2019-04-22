@@ -12,11 +12,14 @@ vp-cursor {
   border-radius: 100%;
 
   opacity: 1;
-  transition: opacity 1s ease-out, transform 0.35s ease-out;
+  transform-origin: center;
+  transition: opacity 1s ease-out, transform 0.35s ease-in-out, width 0.35s ease-out, height 0.35s ease-out;
 }
 
 vp-cursor.highlight {
-  transform: scale(1.5);
+  z-index: -1;
+  transform: scale(6);
+  background-color: var(--color-medium-dark-gray);
 }
 
 vp-cursor.hidden {

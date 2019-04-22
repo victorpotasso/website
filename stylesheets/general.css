@@ -29,6 +29,7 @@ body {
 
 .logo {
   position: fixed;
+  z-index: 1;
   top: var(--body-padding);
   left: var(--body-padding);
   width: 80px;
@@ -38,6 +39,25 @@ body {
   fill: none;
   stroke: var(--color-blue);
   stroke-width: 4px;
+  transition: transform 0.35s ease;
+}
+
+.logo:hover .letter-v {
+  transform: translate(0px, -10px);
+}
+
+.logo:hover .letter-p {
+  transform: translate(0px, 10px);
+}
+
+.btn-link {
+  text-decoration: none;
+  color: var(--color-lightest-dark-gray);
+  cursor: inherit;
+  transition: all 0.35s ease-out;
+}
+.btn-link:hover {
+  color: var(--color-light-dark-gray);
 }
 
 .btn-cv {
