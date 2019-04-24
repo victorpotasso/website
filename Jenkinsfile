@@ -4,10 +4,10 @@ pipeline {
   agent any
 
   stages {
-    stage('Copying files') {
+    stage('Build') {
       steps {
-        echo 'Copying files...'
-        sh 'ls -la'
+        echo 'Building files...'
+        sh 'npm run build'
       }
     }
   }

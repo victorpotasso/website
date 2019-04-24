@@ -1,4 +1,4 @@
-vp-cursor {
+.Cursor {
   position: absolute;
   top: 0;
   left: 0;
@@ -16,12 +16,8 @@ vp-cursor {
   transition: opacity 1s ease-out, transform 0.35s ease-in-out, width 0.35s ease-out, height 0.35s ease-out;
 }
 
-vp-cursor.highlight {
+.Cursor.highlight {
   z-index: -1;
   transform: scale(6);
   background-color: var(--color-medium-dark-gray);
-}
-
-vp-cursor.hidden {
-  opacity: 0;
 }
