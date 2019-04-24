@@ -90,30 +90,6 @@ body {
 .color-dark-grayish-blue { color: var(--color-dark-grayish-blue); }
 .color-light-gray { color: var(--color-light-gray); }
 
-.logo {
-  position: fixed;
-  z-index: 1;
-  top: var(--body-padding);
-  left: var(--body-padding);
-  width: 80px;
-}
-
-.logo path {
-  fill: none;
-  stroke: var(--color-blue);
-  stroke-width: 4px;
-  transition: transform 0.35s ease;
-  pointer-events: none;
-}
-
-.logo:hover .letter-v {
-  transform: translate(0px, -10px);
-}
-
-.logo:hover .letter-p {
-  transform: translate(0px, 10px);
-}
-
 .btn-link {
   text-decoration: none;
   color: var(--color-lightest-dark-gray);

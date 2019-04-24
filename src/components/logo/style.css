@@ -1,0 +1,23 @@
+.Logo {
+  position: fixed;
+  z-index: 1;
+  top: var(--body-padding);
+  left: var(--body-padding);
+  width: 80px;
+}
+
+.Logo path {
+  fill: none;
+  stroke: var(--color-blue);
+  stroke-width: 4px;
+  transition: transform 0.35s ease;
+  pointer-events: none;
+}
+
+.Logo:hover .letter-v {
+  transform: translate(0px, -10px);
+}
+
+.Logo:hover .letter-p {
+  transform: translate(0px, 10px);
+}
