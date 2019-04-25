@@ -1,12 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
+import useCursor from '../../store/hooks/cursor';
 
 import './style.css';
 
 const Cursor = () => {
+  console.log('Components::Cursor');
   const cursorEl = useRef();
-  const [isShown, setIsShown] = useState(false);
-  const [isHighlighted, setIsHighlighted] = useState(false);
-  const [position, setPosition] = useState([0, 0]);
+
+  const [cursorSelector, cursorActions] = useCursor();
 
   useEffect(() => {
     window.addEventListener('mousemove', onMouseMove);
@@ -20,19 +21,20 @@ const Cursor = () => {
     const x = clientX - (cursorEl.current.clientWidth >> 1);
     const y = clientY - (cursorEl.current.clientHeight >> 1);
 
-    setPosition([x, y]);
-    setIsShown(true);
-    setIsHighlighted(!!target.dataset.cursorAction);
+    cursorActions.setPosition([x, y]);
+    cursorActions.setIsShown(true);
+    cursorActions.setIsHighlighted(!!target.dataset.cursorAction);
   }
 
   return (
     <span
+      onMouseMove={onMouseMove}
       ref={cursorEl}
-      className={`Cursor ${isHighlighted ? 'highlight' : ''}`}
+      className={`Cursor ${cursorSelector.isHighlighted ? 'highlight' : ''}`}
       style={{
-        display: isShown ? 'inherit' : 'none',
-        left: position[0],
-        top: position[1],
+        display: cursorSelector.isShown ? 'inherit' : 'none',
+        left: cursorSelector.position[0],
+        top: cursorSelector.position[1],
       }}
     />
   );

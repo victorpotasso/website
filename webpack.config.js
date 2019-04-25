@@ -22,7 +22,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src/index.html'),
       title: 'Victor Potasso | Front End Developer',
-      // favicon: path.join(__dirname, 'src/public/favicon.png')
+      favicon: path.join(__dirname, 'src/public/assets/images/favicon.png')
     })
   ],
   module: {
