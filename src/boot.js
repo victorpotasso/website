@@ -1,30 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Store from './store/index';
+import Store from './store';
 import Logo from './components/logo';
 import Cursor from './components/cursor';
-import Home from './views/home';
-import './boot.css';
 
-if (module.hot) module.hot.accept();
+import routes from './routes';
+import fetchInitialState from './initialState';
 
-const initialState = {
-  version: 1,
-  cursor: {
-    isShown: false,
-    isHighlighted: false,
-    position: [0, 0]
+try {
+  async function boot() {
+    if (module.hot) module.hot.accept();
+
+    const initialState = await fetchInitialState();
+
+    ReactDOM.render(
+      <Store.Provider initialState={initialState}>
+        <Logo />
+        <Cursor />
+        {routes()}
+      </Store.Provider>,
+      document.querySelector('#yield')
+    );
   }
+  boot();
+} catch (error) {
+  console.log(error)
 }
-
-const App = ({ children }) => <div>{ children }</div>
-
-ReactDOM.render(
-  <Store.Provider initialState={initialState}>
-    <Logo />
-    <Cursor />
-    <Home />
-  </Store.Provider>,
-  document.querySelector('#yield')
-);

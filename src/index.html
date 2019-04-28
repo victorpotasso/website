@@ -2,25 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="theme-color" content="#282828">
 
   <title><%= htmlWebpackPlugin.options.title %></title>
-  <meta name="description" content="Front End Developer born and raised in Sao Paulo, Brazil and living in Auckland, New Zealand.">
-  <meta name="keywords" content="Front End, Auckland, Sao Paulo, Victor Potasso, Javascript">
+  <meta name="description" content="<%= htmlWebpackPlugin.options.description %>">
+  <meta name="keywords" content="<%= htmlWebpackPlugin.options.keywords %>">
   
-  <meta property="og:site_name" content="Victor Potasso | Front End Developer">
+  <meta property="og:site_name" content="<%= htmlWebpackPlugin.options.title %>">
   <meta property="og:type" content="Website">
-  <meta property="og:url" content="https://victorpotasso.com/">
-  <meta property="og:title" content="Victor Potasso | Front End Developer">
-  <meta property="og:description" content="Front End Developer born and raised in Sao Paulo, Brazil and living in Auckland, New Zealand.">
+  <meta property="og:url" content="<%= htmlWebpackPlugin.options.url %>">
+  <meta property="og:title" content="<%= htmlWebpackPlugin.options.title %>">
+  <meta property="og:description" content="<%= htmlWebpackPlugin.options.description %>">
   <meta property="og:image" content="https://victorpotasso.com/assets/images/share.png">
 
+  <link rel="manifest" href="assets/manifest.json">
   <link rel="icon" sizes="192x192" href="assets/images/favicon.png">
   <link rel="shortcut icon" href="assets/images/favicon.png">
+
+  <link rel="stylesheet" href="boot.css">
 </head>
 <body>
-  <main id="yield"></main>
+  <main id="yield">loading...</main>
 </body>
 </html>

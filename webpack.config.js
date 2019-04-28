@@ -10,7 +10,7 @@ const DIR_APP = path.join(__dirname, 'src');
  */
 module.exports = {
   entry: {
-    bundle: path.join(DIR_APP, 'boot.js')
+    bundle: ['@babel/polyfill', path.join(DIR_APP, 'boot.js')]
   },
   resolve: {
     modules: [
@@ -21,7 +21,10 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src/index.html'),
+      url: 'https://victorpotasso.com/',
       title: 'Victor Potasso | Front End Developer',
+      description: 'Front End Developer born and raised in Sao Paulo, Brazil and living in Auckland, New Zealand.',
+      keywords: 'Front End, Auckland, Sao Paulo, Victor Potasso, Javascript',
       favicon: path.join(__dirname, 'src/public/assets/images/favicon.png')
     })
   ],
@@ -34,11 +37,12 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: [
-              '@babel/preset-env',
-              '@babel/preset-react'
+              "@babel/preset-env",
+              "@babel/preset-react"
             ],
             plugins: [
-              '@babel/plugin-proposal-object-rest-spread'
+              '@babel/plugin-proposal-object-rest-spread',
+              '@babel/plugin-transform-async-to-generator',
             ]
           }
         }

@@ -4,10 +4,9 @@ import useCursor from '../../store/hooks/cursor';
 import './style.css';
 
 const Cursor = () => {
-  console.log('Components::Cursor');
   const cursorEl = useRef();
 
-  const [cursorSelector, cursorActions] = useCursor();
+  const [cursorSelectors, cursorActions] = useCursor();
 
   useEffect(() => {
     window.addEventListener('mousemove', onMouseMove);
@@ -30,11 +29,11 @@ const Cursor = () => {
     <span
       onMouseMove={onMouseMove}
       ref={cursorEl}
-      className={`Cursor ${cursorSelector.isHighlighted ? 'highlight' : ''}`}
+      className={`Cursor ${cursorSelectors.isHighlighted ? 'highlight' : ''}`}
       style={{
-        display: cursorSelector.isShown ? 'inherit' : 'none',
-        left: cursorSelector.position[0],
-        top: cursorSelector.position[1],
+        display: cursorSelectors.isShown ? 'inherit' : 'none',
+        left: cursorSelectors.position[0],
+        top: cursorSelectors.position[1],
       }}
     />
   );
