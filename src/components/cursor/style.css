@@ -1,9 +1,9 @@
 .Cursor {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 99999;
   pointer-events: none;
+  z-index: 99999;
 
   display: inline-block;
   width: 10px;
@@ -11,13 +11,5 @@
   background-color: var(--color-lightest-dark-gray);
   border-radius: 100%;
 
-  opacity: 1;
   transform-origin: center;
-  transition: opacity 1s ease-out, transform 0.35s ease-in-out, width 0.35s ease-out, height 0.35s ease-out;
-}
-
-.Cursor.highlight {
-  z-index: -1;
-  transform: scale(6);
-  background-color: var(--color-medium-dark-gray);
 }

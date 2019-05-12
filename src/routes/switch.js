@@ -1,29 +1,21 @@
 import React from 'react';
-import { Route, withRouter } from 'react-router-dom';
-import { Transition, TransitionGroup } from 'react-transition-group';
-import { play, exit } from './../timelines'
+import { Switch, withRouter } from 'react-router-dom';
+import { useTransition, animated } from "react-spring";
 
-function Switch ({ children }) {
-  return (
-    <Route render={({ location }) => {
-      const { pathname, key } = location;
-      return (
-        <TransitionGroup component={null}>
-          <Transition
-            key={key}
-            appear
-            onEnter={(node, appears) => play(pathname, node, appears)}
-            onExit={(node, appears) => exit(pathname, node, appears)}
-            timeout={{ enter: 750, exit: 750 }}
-          >
-            <Switch location={location}>
-              {children}
-            </Switch>
-          </Transition>
-        </TransitionGroup>
-      )
-    }} />
-  );
+function AnimatedSwitch ({ location, children }) {
+  const transitions = useTransition(location, location => location.pathname, {
+    from: { opacity: 0, transform: "translate(20%, 0)" },
+    enter: { opacity: 1, transform: "translate(0%, 0)" },
+    leave: { opacity: 0, transform: "translate(-20%, 0)" }
+  });
+
+  return transitions.map(({ item, props, key }) => (
+    <animated.div key={key} style={props}>
+      <Switch location={item}>
+        {children}
+      </Switch>
+    </animated.div>
+  ));
 }
 
-export default Switch;
+export default withRouter(AnimatedSwitch);
