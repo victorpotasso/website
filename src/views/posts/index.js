@@ -7,7 +7,7 @@ const Posts = ({ location }) => {
 
   return (
     <div className="Posts">
-      <h1>Posts</h1>
+      POSTS
     </div>
   );
 }

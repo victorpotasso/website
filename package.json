@@ -2,7 +2,7 @@
   "name": "website",
   "scripts": {
     "build": "webpack --config webpack.config.build.js",
-    "start:dev": "webpack-dev-server --progress --config webpack.config.dev.js"
+    "start": "webpack-dev-server --progress --config webpack.config.dev.js"
   },
   "repository": {
     "type": "git",

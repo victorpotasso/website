@@ -1,12 +1,15 @@
-import React, { useState, useEffect, useRef } from 'react';
-
-import './style.css';
+import React from 'react';
 
 const CodeSandbox = ({ hash, title }) => (
   <iframe
     src={`https://codesandbox.io/embed/${hash}?fontsize=14`}
     title={title}
-    style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+    style={{
+      width: '80vw',
+      height: 'calc(100% - 250px)',
+      border: 0,
+      overflow: 'hidden'
+    }}
     sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
   />
 );

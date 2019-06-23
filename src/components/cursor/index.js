@@ -20,13 +20,26 @@ function Cursor() {
     setProp({ xys: [
       clientX,
       clientY,
-      hasAction ? 6 : 1
+      /IFRAME/.test(target.nodeName) ? 0 : hasAction ? 6 : 1
+    ]});
+  }
+
+  const onMouseLeave = ({ target, clientX, clientY }) => {
+    console.log('onMouseLeave')
+    setProp({ xys: [
+      clientX,
+      clientY,
+      0
     ]});
   }
 
   useEffect(() => {
     window.addEventListener('mousemove', onMouseMove);
-    return () => window.removeEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseleave', onMouseLeave);
+    return () => {
+      window.removeEventListener('mousemove', onMouseMove)
+      document.removeEventListener('mouseleave', onMouseLeave)
+    };
   }, []);
 
   return (

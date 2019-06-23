@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTrail, animated } from 'react-spring';
 
+import Enter from './../../components/enter';
 import useWelcome from './../../store/hooks/welcome';
 
 import './style.css';
@@ -23,7 +24,8 @@ const Home = ({ location, history }) => {
     <p><b className="color-soft-yellow">{role}</b> {paragraphs[0]}</p>,
     <p>{paragraphs[1]}</p>,
     <a className="btn-link" data-cursor-action="highlight" href={`mailto:${email}`}>{email}</a>,
-    <p onClick={onClick} data-cursor-action="highlight">see posts</p>,
+    // <p onClick={onClick} data-cursor-action="highlight">see posts</p>,
+    // <Enter />,
   ]
 
   const trail = useTrail(items.length, {
