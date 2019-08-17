@@ -6,8 +6,8 @@ pipeline {
   stages {
     stage('Dependencies') {
       steps {
-        sh 'rm -rf package-lock.json'
-        sh 'rm -rf node_modules'
+        sh 'sudo rm -rf package-lock.json'
+        sh 'sudo rm -rf node_modules'
         echo 'Installing dependencies...'
         sh 'npm install'
       }
